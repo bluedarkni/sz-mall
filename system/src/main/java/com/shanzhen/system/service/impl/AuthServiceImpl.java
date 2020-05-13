@@ -5,6 +5,7 @@ import cn.hutool.crypto.asymmetric.RSA;
 import com.shanzhen.common.component.RedisUtils;
 import com.shanzhen.common.exception.ErrorCodeException;
 import com.shanzhen.system.error.SystemErrorCode;
+import com.shanzhen.system.model.vo.AuthResult;
 import com.shanzhen.system.model.vo.AuthUser;
 import com.shanzhen.system.model.vo.JwtUser;
 import com.shanzhen.system.properties.JwtProperties;
@@ -36,7 +37,7 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
     @Override
-    public Object login(AuthUser authUser) {
+    public AuthResult login(AuthUser authUser) {
         // 校验验证码
         if (StringUtils.isNotBlank(authUser.getCodeKey())) {
             String code = (String) redisUtils.get(authUser.getCodeKey());
@@ -56,10 +57,9 @@ public class AuthServiceImpl implements AuthService {
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         String token = tokenProvider.createToken(authentication);
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
-        Map<String, Object> authInfo = new HashMap<String, Object>(){{
-            put("token", jwtProperties.getTokenStartWith() + token);
-            put("user", jwtUser);
-        }};
+        AuthResult authInfo = new AuthResult();
+        authInfo.setToken(jwtProperties.getTokenStartWith() + token);
+        authInfo.setUser(jwtUser);
         return authInfo;
     }
 }

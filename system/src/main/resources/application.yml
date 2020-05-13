@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     url: jdbc:log4jdbc:mysql://111.229.53.45:3306/szmall?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
@@ -23,3 +24,9 @@ sz:
     token-validity-in-seconds: 7200000
     online-key: online-token
     code-key: code-key
+logging:
+  level:
+    com:
+      shanzhen:
+        system:
+          dao: debug

@@ -1,5 +1,6 @@
 package com.shanzhen.system.service;
 
+import com.shanzhen.system.model.vo.AuthResult;
 import com.shanzhen.system.model.vo.AuthUser;
 
 /**
@@ -8,5 +9,5 @@ import com.shanzhen.system.model.vo.AuthUser;
  */
 public interface AuthService {
 
-    Object login(AuthUser authUser);
+    AuthResult login(AuthUser authUser);
 }
