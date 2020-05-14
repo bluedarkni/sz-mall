@@ -1,4 +1,4 @@
-package com.shanzhen.system.model.vo;
+package com.shanzhen.system.model.vo.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -32,15 +32,13 @@ public class JwtUser implements UserDetails {
 
     private final String phone;
 
+    /**
+     * 权限信息
+     */
     @JsonIgnore
     private final Collection<GrantedAuthority> authorities;
 
     private final boolean enabled;
-
-    private Timestamp createTime;
-
-    @JsonIgnore
-    private final Date lastPasswordResetDate;
 
     @JsonIgnore
     @Override

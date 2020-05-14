@@ -1,4 +1,4 @@
-package com.shanzhen.system.model.vo;
+package com.shanzhen.system.model.vo.auth;
 
 import lombok.Data;
 
@@ -25,5 +25,5 @@ public class AuthUser {
     /**
      * 验证码key
      */
-    private String codeKey = "";
+    private String captchaId = "";
 }

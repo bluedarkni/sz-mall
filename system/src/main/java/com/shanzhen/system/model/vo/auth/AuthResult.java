@@ -1,4 +1,4 @@
-package com.shanzhen.system.model.vo;
+package com.shanzhen.system.model.vo.auth;
 
 import lombok.Data;
 

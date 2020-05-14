@@ -1,7 +1,8 @@
 package com.shanzhen.system.service;
 
-import com.shanzhen.system.model.vo.AuthResult;
-import com.shanzhen.system.model.vo.AuthUser;
+import com.shanzhen.system.model.vo.auth.AuthResult;
+import com.shanzhen.system.model.vo.auth.AuthUser;
+import com.shanzhen.system.model.vo.auth.CaptchaInfo;
 
 /**
  * Description:
@@ -10,4 +11,6 @@ import com.shanzhen.system.model.vo.AuthUser;
 public interface AuthService {
 
     AuthResult login(AuthUser authUser);
+
+    CaptchaInfo generateCaptcha();
 }

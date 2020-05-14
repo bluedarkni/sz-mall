@@ -17,6 +17,11 @@ public enum SystemErrorCode implements ErrorCode {
      */
     CAPTCHA_EXPIRE_1002(1002),
 
+    /**
+     * 用户不存在
+     */
+    USER_NOT_EXITS_1003(1003),
+
 
     ;
 

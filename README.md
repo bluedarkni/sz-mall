@@ -1,0 +1,1 @@
+注册中心使用的nacos源码启动：https://github.com/alibaba/nacos

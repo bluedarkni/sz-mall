@@ -24,5 +24,13 @@ public class JwtProperties {
 
     private String onlineKey;
 
+    /**
+     * 验证码key
+     */
     private String codeKey;
+
+    /**
+     * 验证码失效时间
+     */
+    private long expire;
 }
