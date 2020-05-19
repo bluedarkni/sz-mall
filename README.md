@@ -1,1 +1,2 @@
-注册中心使用的nacos源码启动：https://github.com/alibaba/nacos
+1.system模块启动
+2.初始化sql resources/sql
