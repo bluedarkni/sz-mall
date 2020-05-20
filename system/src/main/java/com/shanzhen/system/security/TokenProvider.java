@@ -96,7 +96,7 @@ public class TokenProvider implements InitializingBean {
         return false;
     }
 
-    public String getToken(HttpServletRequest request){
+    public String getToken(HttpServletRequest request) {
         final String requestHeader = request.getHeader(jwtProperties.getHeader());
         if (requestHeader != null && requestHeader.startsWith(jwtProperties.getTokenStartWith())) {
             return requestHeader.substring(7);

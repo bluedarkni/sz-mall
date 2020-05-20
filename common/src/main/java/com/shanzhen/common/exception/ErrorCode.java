@@ -8,12 +8,14 @@ public interface ErrorCode {
 
     /**
      * 资源文件中的key
+     *
      * @return
      */
     String getKey();
 
     /**
      * 获取错误码
+     *
      * @return
      */
     int getCode();

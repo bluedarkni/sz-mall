@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * Created by nijunyang on 2020/5/9 19:03
  */
 @Documented
-@Target({ ElementType.METHOD})
+@Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SensitiveMethod {
     /**

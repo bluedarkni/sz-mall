@@ -27,8 +27,9 @@ public class ErrorCodeExceptionHandler {
 
     /**
      * 统一处理ErrorCodeException业务异常，返回前台错误提示
-     * @param exception    exception
-     * @param locale       locale
+     *
+     * @param exception exception
+     * @param locale    locale
      * @return
      */
     @ExceptionHandler(value = ErrorCodeException.class)
@@ -40,6 +41,7 @@ public class ErrorCodeExceptionHandler {
 
     /**
      * 请求参数校验异常
+     *
      * @param exception exception
      * @return
      */

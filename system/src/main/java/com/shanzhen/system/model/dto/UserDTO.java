@@ -2,7 +2,8 @@ package com.shanzhen.system.model.dto;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.shanzhen.common.entity.BaseEntity;
+import com.shanzhen.common.enums.Role;
+import com.shanzhen.common.model.BaseEntity;
 import lombok.Data;
 
 
@@ -26,5 +27,7 @@ public class UserDTO extends BaseEntity {
     private String phone;
 
     private Boolean enabled = true;
+
+    private Role role;
 
 }

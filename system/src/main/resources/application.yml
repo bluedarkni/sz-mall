@@ -1,19 +1,30 @@
+server:
+  port: 8081
 spring:
+  application:
+    name: system
   datasource:
-    url: jdbc:mysql://**.**.**.**:3306/szmall?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://111.229.53.45:3306/szmall?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   #redis
   redis:
     database: 0
-    host: **.**.**.**
+    host: 111.229.53.45
     port: 6379
-    password: *****
+    password: Wbqsphr.1114redis
     timeout: 5000
-  messages:
-    basename: messages/sz_system
-    encoding: utf-8
+  #nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 6d7c1897-941e-4e72-b2ef-c70b74f3efea  #nacos控制台配置 可以进行资源隔离，比如dev和test不一样
+        group: szmall   #资源隔离，不同分组之间的服务不能互相调用
+        cluster-name: CD  #抽象出来的一个参数，可以实现自己负载均衡算法优先调用同名的服务。比如成都机房的服务优先调用成都机房的
+        metadata:
+          version: v1  #数据隔离相同版本之间才能互相调用
 #jwt
 sz:
   rsa:

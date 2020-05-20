@@ -26,15 +26,15 @@ import java.util.Base64;
 import java.util.Random;
 
 /**
- * Description: 
+ * Description:
  * Created by nijunyang on 2020/5/9 19:05
  */
 public class CipherUtil {
     // 密码字母表
-    private static final String[] CHARACTERS = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "g", "k", "l", "m", "n", "o", "p",
+    private static final String[] CHARACTERS = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "g", "k", "l", "m", "n", "o", "p",
             "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M",
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "~", "@", "#", "$", "%", "^", "&", "*", "(", ")",
-            "_", "+", "|", "`", ".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+            "_", "+", "|", "`", ".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
 
     private static final int ARRARY_LENGTH = 76;
 
@@ -77,12 +77,9 @@ public class CipherUtil {
     /**
      * 把文件srcFile加密后存储为destFile
      *
-     * @param srcFile
-     *            加密前的文件
-     * @param destFile
-     *            加密后的文件
-     * @param privateKey
-     *            密钥
+     * @param srcFile    加密前的文件
+     * @param destFile   加密后的文件
+     * @param privateKey 密钥
      * @throws GeneralSecurityException
      * @throws IOException
      */
@@ -115,12 +112,9 @@ public class CipherUtil {
     /**
      * 把文件srcFile解密后存储为destFile
      *
-     * @param srcFile
-     *            解密前的文件
-     * @param destFile
-     *            解密后的文件
-     * @param privateKey
-     *            密钥
+     * @param srcFile    解密前的文件
+     * @param destFile   解密后的文件
+     * @param privateKey 密钥
      * @throws GeneralSecurityException
      * @throws IOException
      */
@@ -153,8 +147,7 @@ public class CipherUtil {
     /**
      * 根据filePath创建相应的目录
      *
-     * @param filePath
-     *            要创建的文件路经
+     * @param filePath 要创建的文件路经
      * @return file 文件
      * @throws IOException
      */
@@ -171,12 +164,9 @@ public class CipherUtil {
     /**
      * 加密解密流
      *
-     * @param in
-     *            加密解密前的流
-     * @param out
-     *            加密解密后的流
-     * @param cipher
-     *            加密解密
+     * @param in     加密解密前的流
+     * @param out    加密解密后的流
+     * @param cipher 加密解密
      * @throws IOException
      * @throws GeneralSecurityException
      */
@@ -209,10 +199,8 @@ public class CipherUtil {
     /**
      * 加密字符串（加密结果转为16进制）
      *
-     * @param srcString
-     *            加密前的字符串
-     * @param privateKey
-     *            密钥
+     * @param srcString  加密前的字符串
+     * @param privateKey 密钥
      * @throws GeneralSecurityException
      */
     public static String encryptString(String srcString, String privateKey) {
@@ -234,12 +222,12 @@ public class CipherUtil {
     }
 
     /**
-     * @Title: 		 encryptStringAESECBToBase64
-     * @Description: 加密并转成base64字符串  给php转换http://www.cnblogs.com/yipu/articles/3871576.html
      * @param srcString
      * @param privateKey
      * @return
      * @throws
+     * @Title: encryptStringAESECBToBase64
+     * @Description: 加密并转成base64字符串  给php转换http://www.cnblogs.com/yipu/articles/3871576.html
      */
     public static String encryptStringAESECBToBase64(String srcString, String privateKey) {
         if (StringUtils.isBlank(srcString)) {
@@ -259,12 +247,12 @@ public class CipherUtil {
     }
 
     /**
-     * @Title: 		 decryptStringAESECBFromBase64
-     * @Description: 解密base64形式的字符串  给php转换http://www.cnblogs.com/yipu/articles/3871576.html
      * @param srcString
      * @param privateKey
      * @return
      * @throws
+     * @Title: decryptStringAESECBFromBase64
+     * @Description: 解密base64形式的字符串  给php转换http://www.cnblogs.com/yipu/articles/3871576.html
      */
     public static String decryptStringAESECBFromBase64(String srcString, String privateKey) {
         if (StringUtils.isBlank(srcString)) {
@@ -286,10 +274,8 @@ public class CipherUtil {
     /**
      * 解密字符串（解密字符串需要是16进制的）
      *
-     * @param srcString
-     *            解密前的字符串
-     * @param privateKey
-     *            密钥
+     * @param srcString  解密前的字符串
+     * @param privateKey 密钥
      * @throws GeneralSecurityException
      */
     public static String decryptString(String srcString, String privateKey) {
@@ -394,10 +380,8 @@ public class CipherUtil {
     /**
      * 使用 HMAC-SHA1 签名方法对对encryptText进行签名
      *
-     * @param encryptText
-     *            被签名的字符串
-     * @param encryptKey
-     *            密钥
+     * @param encryptText 被签名的字符串
+     * @param encryptKey  密钥
      * @return
      * @throws Exception
      */

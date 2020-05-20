@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Description:
+ * Description: 登录授权
  * Created by nijunyang on 2020/5/12 15:05
  */
 @RestController

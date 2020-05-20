@@ -94,7 +94,7 @@ public class SensitiveAspect {
                 String encryptValue = CipherUtil.encryptString(plaintextValue, secretKey);
                 Field field = bean.getClass().getDeclaredField("value");
                 field.setAccessible(true);
-                char[] ch =(char[])field.get(bean);
+                char[] ch = (char[]) field.get(bean);
                 field.set(bean, encryptValue.toCharArray());
             }
         } else if (beanType.isArray()) {

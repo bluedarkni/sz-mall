@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * Description:
+ * Description: 用户操作
  * Created by nijunyang on 2020/5/14 16:21
  */
 @RestController
@@ -25,8 +25,14 @@ public class UserController {
     @Resource
     UserService userService;
 
+    /**
+     * 创建用户
+     *
+     * @param user
+     * @return
+     */
     @PostMapping
-    public ResponseEntity<Object> create(@Validated @RequestBody UserDTO user){
+    public ResponseEntity<Object> create(@Validated @RequestBody UserDTO user) {
         Object object = userService.create(user);
         return new ResponseEntity<>(object, HttpStatus.CREATED);
     }

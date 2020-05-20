@@ -9,48 +9,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Description: 
+ * Description:
  * Created by nijunyang on 2020/5/9 19:05
  */
 public class BaseConvertUtil {
-    private static final byte[] base34CharMap = new byte[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
-            'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+    private static final byte[] base34CharMap = new byte[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+            'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     private static final BigInteger base34 = BigInteger.valueOf(base34CharMap.length);
 
-    public static final byte[] base62CharMap = new byte[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+    public static final byte[] base62CharMap = new byte[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
             'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a',
             'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-            'y', 'z' };
+            'y', 'z'};
 
     private static final BigInteger base62 = BigInteger.valueOf(base62CharMap.length);
 
     // ASCII only
     public static final boolean[] yui64Index = new boolean[256];
 
-    private static final byte[] yui64CharMap = new byte[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+    private static final byte[] yui64CharMap = new byte[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
             'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a',
             'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-            'y', 'z', '.', '_', '-' };
+            'y', 'z', '.', '_', '-'};
 
     private static final BigInteger yui64 = new BigInteger("65");
 
     // this is used for check-digit of seqnum
-    private static final char[] base23CharMap = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P',
-            'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z' };
+    private static final char[] base23CharMap = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P',
+            'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
 
     private static final int base23Hex = 23;
 
-    private static final int[] digits_weight = new int[] { 1, 3, 7, 9 };
+    private static final int[] digits_weight = new int[]{1, 3, 7, 9};
 
     private static final int digits_weight_size = 4;
 
     // ASCII only
     public static final boolean[] base42Index = new boolean[256];
 
-    private static final byte[] base42CharMap = new byte[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+    private static final byte[] base42CharMap = new byte[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
             'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '$',
-            '*', '+', '-', '.', ':' };
+            '*', '+', '-', '.', ':'};
 
     private static final BigInteger base42 = new BigInteger("42");
 
@@ -353,9 +353,7 @@ public class BaseConvertUtil {
      * 将二进制转换成16进制
      *
      * @param buf
-     * @param upperCase
-     *            need UpperCase or not
-     *
+     * @param upperCase need UpperCase or not
      * @return
      */
     public static String parseByte2HexStr(byte buf[], boolean upperCase) {

@@ -12,7 +12,7 @@ import cn.hutool.crypto.asymmetric.RSA;
  */
 public class Test {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         RSA rsa = new RSA();
         String publicKeyBase64 = rsa.getPublicKeyBase64();
         String privateKeyBase64 = rsa.getPrivateKeyBase64();
